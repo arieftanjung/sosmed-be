@@ -18,3 +18,40 @@ Content-Type: application/json
     "email":"aqiljembs@gmail.com",
     "password":"jelekbanget88"
 }
+
+###
+
+POST http://localhost:5000/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "username":"kampss",
+    "fullname":"kampss",
+    "email":"kampsssd@gmail.com",
+    "password":"kampret",
+    "confirmpassword":"kampret"  
+}
+
+### 
+
+GET http://localhost:5000/auth/verifikasi HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODksInVzZXJuYW1lIjoia2FtcHNzIiwidGltZWNyZWF0ZWQiOjE2NDk5NjgyMzAyODUsImlhdCI6MTY0OTk2ODIzMCwiZXhwIjoxNjQ5OTc1NDMwfQ.WeyH9OiQf4XKOHjnHep2PtXE_nZe8KDLEmXoy2Z1bSA
+ 
+ {
+     "id": 89
+ }
+
+###
+
+POST http://localhost:5000/profile/updateprofile HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzgsInVzZXJuYW1lIjoiYXFpbCIsImlhdCI6MTY1MDQ2ODAyOCwiZXhwIjoxNjUwNDc1MjI4fQ.sXggWhyhKIJc42_HO620-CbD2RkJSQJwHuKRgMf6R7k
+
+{
+    "fullname" : "kampret",
+    "bio" : "tailu",
+    "username" : "nabi"
+}
+
+

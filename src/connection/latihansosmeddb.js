@@ -12,7 +12,7 @@ const db = mysql.createPool({
 
 db.getConnection((err, conn) => {
   if (err) {
-    console.log("error bro");
+    console.log("error cuy");
   }
   console.log(`connected sa id ${conn.threadId}`);
 });

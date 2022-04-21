@@ -20,17 +20,18 @@ module.exports = {
       conn = await dbCon.promise().getConnection();
       //  hashing password
       password = hashPass(password);
-      sql = `select * from users where (username = ? or email = ?) and password = ?`;
+      sql = `select * from users where (username = ? or email = ?) and password = ? `;
       let [result] = await conn.query(sql, [username, email, password]);
       console.log(result);
       if (!result.length) {
         // user is not defined
-        console.log("tes");
+        // console.log("tes");
         throw { message: "user is not defined" };
       }
-      // buat token access
-      // query cart
-      // lewatin dulu
+      // cek verified user
+      if (!result[0].isVerified) {
+        throw { message: "user belum terverified" };
+      }
       conn.release();
       return { success: true, data: result[0] };
     } catch (error) {

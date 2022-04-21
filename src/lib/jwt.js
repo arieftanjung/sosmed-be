@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 module.exports = {
   createJwtAccess: (data) => {
-    //   buat
+    //   buat token acces
     return jwt.sign(data, process.env.JWT_SECRET, { expiresIn: "2h" });
   },
   createJwtemail: (data) => {
